@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useActionState, useState } from "react";
@@ -10,6 +11,7 @@ import { formSchema } from "@/lib/validation";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
+import { createPitch } from "@/lib/actions";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -29,22 +31,18 @@ const StartupForm = () => {
 
       await formSchema.parseAsync(formValues);
 
-      console.log(formValues);
+      const result = await createPitch(prevState, formData, pitch);
 
-      // const result = await createIdea(prevState, formData, pitch);
+      if (result.status === "SUCCESS") {
+        toast({
+          title: "SUCCESS",
+          description: "Your startup pitch has been created sccessfully",
+        });
 
-      // console.log(result);
+        router.push(`/startup/${result._id}`);
+      }
 
-      // if (result.status === 'SUCCESS') {
-      //   toast({
-      //     title: "SUCCESS",
-      //     description: "Your startup pitch has been created sccessfully",
-      //   });
-
-      //   router.push(`/startup/${result.id}`);
-      // }
-
-      // return result;
+      return result;
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors = error.flatten().fieldErrors;
