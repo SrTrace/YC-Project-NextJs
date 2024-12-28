@@ -36,7 +36,7 @@ const StartupForm = () => {
       if (result.status === "SUCCESS") {
         toast({
           title: "SUCCESS",
-          description: "Your startup pitch has been created sccessfully",
+          description: "Your startup pitch has been created successfully",
         });
 
         router.push(`/startup/${result.id}`);
