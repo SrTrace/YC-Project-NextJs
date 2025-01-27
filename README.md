@@ -1,6 +1,5 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/Zq5fmkH0T78?feature=shared" target="_blank">
       <img src="https://github.com/user-attachments/assets/471e2baa-8781-43b8-aaed-62e313d03e99" alt="Project Banner">
     </a>
   <br />
@@ -16,7 +15,7 @@
 <h3 align="center">Startup Directory Platform</h3>
 
    <div align="center">
-     "I am following this project step by step using the tutorial on the <a href='https://www.youtube.com/@javascriptmastery/videos' target='_blank'><b>JavaScript Mastery</b></a> YouTube channel. The goal is to understand Next.js concepts. 😊"
+     "I am following this project step by step using the tutorial on the <b>JavaScript Mastery</b> YouTube channel. The goal is to understand Next.js concepts. 😊"
     </div>
 </div>
 
